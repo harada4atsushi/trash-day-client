@@ -1,6 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def doorkeeper
-    binding.pry
+    # binding.pry
     @user = User.find_or_create_with_doorkeeper(request.env['omniauth.auth'])
 
     if @user.persisted?

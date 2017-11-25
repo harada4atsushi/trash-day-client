@@ -16,7 +16,7 @@ module OmniAuth
       # end
 
       def raw_info
-        binding.pry
+        # binding.pry
         @raw_info ||= JSON.parse(access_token.get('api/v1/me').response.body)
       end
 

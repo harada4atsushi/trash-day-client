@@ -255,7 +255,9 @@ Devise.setup do |config|
   # strategyファイルのパスを指定して、ロード
   require File.expand_path('lib/omniauth/strategies/doorkeeper', Rails.root)
   Devise.setup do |config|
-    config.omniauth(:doorkeeper, 'b1560de64a5faf96d6f44e1ca32c0473d88260cc3b6472c501acfb1180821d41', 'eb49bd18ab22f45341686c86e302d69cc58c371aaf0ceb24139a793a31a44355')
+    # local
+    # config.omniauth(:doorkeeper, 'b1560de64a5faf96d6f44e1ca32c0473d88260cc3b6472c501acfb1180821d41', 'eb49bd18ab22f45341686c86e302d69cc58c371aaf0ceb24139a793a31a44355')
+    config.omniauth(:doorkeeper, ENV['APP_ID'], ENV['APP_SECRET'])
   end
 
   # ==> Warden configuration

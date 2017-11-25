@@ -1,6 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  skip_before_action :authenticate_user!
+
   def doorkeeper
-    # binding.pry
     @user = User.find_or_create_with_doorkeeper(request.env['omniauth.auth'])
 
     if @user.persisted?

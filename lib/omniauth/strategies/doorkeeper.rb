@@ -5,7 +5,7 @@ module OmniAuth
 
       site = 'http://localhost:3000'
       site = 'https://trash-day-client.herokuapp.com' if Rails.env.production?
-      option :client_options, site: site, authorize_path: '/oauth/authorize'
+      option :client_options, site: site, authorize_path: '/auth/authorize'
 
       uid { raw_info['id'] }
       # providerから送られてきたデータの内、どれを使いたいか
